@@ -53,6 +53,7 @@ AvlNode* insert(AvlNode* node, T val) {
 		}
 		// else do nothing
 	}
+	node->height = max(height(node->left_), height(node->right_)) + 1;
 	return node;
 }
 
@@ -103,6 +104,7 @@ AvlNode* del(AvlNode* node, T val) {
 				node = doubleRotateRight(node);
 		}
 	}
+	node->height = max(height(node->left_), height(node->right_)) + 1;
 	return node;
 }
 
